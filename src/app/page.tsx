@@ -1,7 +1,8 @@
-import ActionComp from "@/components/stand-alone/action-giude";
-import Banner from "@/components/stand-alone/banner-comp";
-import CertificationAndExpertise from "@/components/stand-alone/certifications";
-import VideoIllustration from "@/components/stand-alone/video-illustration";
+import ActionComp from "@/components/stand-alone/home/action-giude";
+import Banner from "@/components/stand-alone/home/banner-comp";
+import CertificationAndExpertise from "@/components/stand-alone/home/certifications";
+import VideoIllustration from "@/components/stand-alone/home/video-illustration";
+import VideoIllustration2 from "@/components/stand-alone/home/video-illustration-2";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ActionComp />
       <VideoIllustration />
       <CertificationAndExpertise />
+      <VideoIllustration2 />
     </div>
   );
 }

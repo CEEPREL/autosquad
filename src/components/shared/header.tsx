@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { AddIcCall } from "@mui/icons-material";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   /**
@@ -26,7 +27,11 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Pricing", "Squad Hub", "Support"];
+const navItems = [
+  { name: "Pricing", uri: "/pricing" },
+  { name: "Training Hub", uri: "/training-hub" },
+  { name: "Support", uri: "/support" },
+];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -44,9 +49,9 @@ export default function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -90,9 +95,9 @@ export default function DrawerAppBar(props: Props) {
                 <Image width={50} height={50} src="/logo.png" alt="logo" />
                 Squad
               </Button>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#000000" }}>
-                  {item}
+              {navItems.map((item, idx) => (
+                <Button key={idx} sx={{ color: "#000000" }}>
+                  <Link href={item.uri}>{item.name}</Link>
                 </Button>
               ))}
             </Box>

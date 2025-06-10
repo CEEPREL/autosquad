@@ -21,7 +21,7 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-      <section className="relative w-full h-[85vh] md:h-[500px] overflow-hidden">
+      <section className="relative w-full h-[85vh] md:h-[600px] overflow-hidden">
         <Image
           className="w-full absolute h-[85%] hidden md:block object-cover top-0 left-0 z-10 select-none pointer-events-none"
           alt="banner"
@@ -52,7 +52,7 @@ const Banner: React.FC<BannerProps> = ({
           <div className="flex mt-8">
             <button
               onClick={onButtonClick}
-              className="bg-[#b0460d] text-lg text-white lg:text-xl font-medium px-8 lg:px-15 py-3 rounded-full"
+              className="bg-[#b0460d] hover:bg-[#993b0c] text-lg text-white lg:text-xl font-medium px-8 lg:px-15 py-3 rounded-full"
             >
               {buttonLabel}
             </button>

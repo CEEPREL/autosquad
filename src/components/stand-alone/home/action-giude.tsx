@@ -78,7 +78,7 @@ export const ActionGuideItem: React.FC<ActionGuideItemProps> = ({
   onClick,
 }) => {
   return (
-    <div className="flex flex-col items-center text-center px-8 py-10 bg-white rounded-lg shadow-md max-w-sm font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col items-center text-center px-8 py-20 bg-white rounded-lg shadow-md max-w-sm font-[family-name:var(--font-geist-sans)]">
       <div className="mb-6 w-16 h-16 text-[#b0460d]">{icon}</div>
 
       <h3 className="text-2xl font-extrabold text-black mb-2">{title}</h3>

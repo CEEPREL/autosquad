@@ -40,7 +40,7 @@ const techDescriptions = [
 
 export default function CertificationAndExpertise() {
   return (
-    <section className=" text-black mt-8 font-[family-name:var(--font-geist-sans)]">
+    <section className=" text-black mt-8 py-10 font-[family-name:var(--font-geist-sans)]">
       {/* Infinite Scrolling Logo Banner */}
       <div className="overflow-hidden py-8 border-b border-gray-800">
         <h1 className="text-4xl font-bold text-center mb-8">
