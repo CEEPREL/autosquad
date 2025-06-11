@@ -1,5 +1,5 @@
-import Banner from "@/components/stand-alone/training-hub/banner-comp";
-import BookCategories from "@/components/stand-alone/training-hub/book-categories";
+import Banner from "@/components/stand-alone/learning-hub/banner-comp";
+import BookCategories from "@/components/stand-alone/learning-hub/book-categories";
 import React from "react";
 
 function page() {
@@ -10,7 +10,7 @@ function page() {
         subtext=""
         buttonLabel="Browse Our Collection"
         imageSrc="/banner2.png"
-        smImageSrc="/banner_sm.png"
+        smImageSrc="/banner2_sm.png"
       />
       <BookCategories />
     </div>

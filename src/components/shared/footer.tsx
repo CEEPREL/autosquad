@@ -25,6 +25,8 @@ export default function Footer() {
 
   return (
     <Box
+      className="min-h-[20vh]"
+      id="footer"
       component="footer"
       sx={{
         bgcolor: "#121212",

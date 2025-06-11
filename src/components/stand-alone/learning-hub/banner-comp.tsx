@@ -52,7 +52,7 @@ const Banner: React.FC<BannerProps> = ({
           <div className="flex mt-8">
             <button
               onClick={onButtonClick}
-              className="bg-[#b0460d] text-lg text-white lg:text-xl font-medium px-8 lg:px-15 py-3 rounded-full"
+              className="bg-[#b0460d] hover:bg-[#993b0c] text-lg text-white lg:text-xl font-medium px-8 lg:px-15 py-3 rounded-full"
             >
               {buttonLabel}
             </button>

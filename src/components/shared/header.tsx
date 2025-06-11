@@ -29,8 +29,8 @@ interface Props {
 const drawerWidth = 240;
 const navItems = [
   { name: "Pricing", uri: "/pricing" },
-  { name: "Training Hub", uri: "/training-hub" },
-  { name: "Support", uri: "/support" },
+  { name: "Learning Hub", uri: "/learning-hub" },
+  { name: "Support", uri: "#footer" },
 ];
 
 export default function DrawerAppBar(props: Props) {
@@ -43,16 +43,20 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <Link href="/">
+        <Typography variant="h6" sx={{ my: 2 }}>
+          AUTOSQUAD
+        </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
+            <Link href={item.uri}>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -72,37 +76,66 @@ export default function DrawerAppBar(props: Props) {
     >
       <CssBaseline />
       <AppBar component="nav" sx={{ bgcolor: "#fff", color: "#000" }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-            }}
-          >
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              <Button sx={{ color: "#000000" }}>
-                <Image width={50} height={50} src="/logo.png" alt="logo" />
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          {/* LEFT SECTION: Menu Icon + Logo + Nav Items */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <Image src="/logo.png" alt="logo" width={40} height={40} />
+              <Typography
+                variant="h6"
+                component="span"
+                sx={{ fontWeight: "bold" }}
+              >
                 Squad
-              </Button>
+              </Typography>
+            </Link>
+
+            {/* Nav Items */}
+            <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1 }}>
               {navItems.map((item, idx) => (
-                <Button key={idx} sx={{ color: "#000000" }}>
+                <Button
+                  key={idx}
+                  sx={{ color: "#000000", textTransform: "none" }}
+                >
                   <Link href={item.uri}>{item.name}</Link>
                 </Button>
               ))}
             </Box>
-          </Typography>
-          <AddIcCall />
+          </Box>
+
+          {/* RIGHT SECTION: Call Icon (Desktop Only) */}
+          <Box sx={{ display: "flex" }}>
+            <Button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window().open("email@glma.vd");
+                }
+              }}
+              variant="contained"
+              sx={{
+                bgcolor: "#b0460d",
+                color: "#fff",
+                textTransform: "none",
+                borderRadius: "50%",
+                width: 40,
+                height: 40,
+                display: { xs: "none", sm: "flex" },
+              }}
+            >
+              <AddIcCall />
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
       <nav>

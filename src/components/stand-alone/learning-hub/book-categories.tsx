@@ -1,115 +1,13 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
-
-const categoriesData = [
-  {
-    category: "Programming & Software Engineering",
-    books: [
-      {
-        id: 1,
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        year: 2008,
-        description:
-          "Emphasizes writing clean, readable, and maintainable code.",
-        price: 15.99,
-        uri: "/checkout/cleancode.jpeg",
-      },
-      {
-        id: 1,
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        year: 2008,
-        description:
-          "Emphasizes writing clean, readable, and maintainable code.",
-        price: 15.99,
-        uri: "/checkout/cleancode.jpeg",
-      },
-      {
-        id: 1,
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        year: 2008,
-        description:
-          "Emphasizes writing clean, readable, and maintainable code.",
-        price: 15.99,
-        uri: "/checkout/cleancode.jpeg",
-      },
-      {
-        id: 1,
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        year: 2008,
-        description:
-          "Emphasizes writing clean, readable, and maintainable code.",
-        price: 15.99,
-        uri: "/checkout/cleancode.jpeg",
-      },
-      {
-        id: 1,
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        year: 2008,
-        description:
-          "Emphasizes writing clean, readable, and maintainable code.",
-        price: 15.99,
-        uri: "/checkout/cleancode.jpeg",
-      },
-      {
-        id: 2,
-        title: "Code Complete",
-        author: "Steve McConnell",
-        year: 1993,
-        description: "A comprehensive analysis of software construction.",
-        price: 20.0,
-        uri: "/checkout/codecomplete.jpeg",
-      },
-      {
-        id: 3,
-        title: "Design Patterns: Elements of Reusable Object-Oriented Software",
-        author: "Erich Gamma et al.",
-        year: 1994,
-        description:
-          "Introduces 23 classic design patterns in object-oriented software development.",
-        price: 25.5,
-        uri: "/checkout/desigpatterns.jpeg",
-      },
-      // add more books as needed
-    ],
-  },
-  {
-    category: " Startups & Entrepreneurship",
-    books: [
-      {
-        id: 11,
-        title: "The Lean Startup",
-        author: "Eric Ries",
-        year: 2011,
-        description:
-          "Introduces the lean startup methodology, emphasizing rapid experimentation and customer feedback.",
-        price: 18.99,
-        uri: "/checkout/leanstartup.jpeg",
-      },
-      {
-        id: 12,
-        title: "Zero to One",
-        author: "Peter Thiel",
-        year: 2014,
-        description: "Discusses startups and innovation.",
-        price: 17.5,
-        uri: "/checkout/zerotoone.jpeg",
-      },
-      // ...
-    ],
-  },
-  // Add more categories similarly
-];
+import Link from "next/link";
+import { useRef } from "react";
+import categoriesData from "@/data/books.json";
 
 // Helper scroll function
 function scrollContainer(ref: HTMLDivElement, direction = "left") {
   if (!ref) return;
-  const scrollAmount = 350; // px scroll per click
+  const scrollAmount = 320; // px scroll per click
   if (direction === "left") {
     ref.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   } else {
@@ -172,12 +70,12 @@ export default function BookCategories() {
                   <p className="mt-4 font-bold text-lg">
                     ${book.price.toFixed(2)}
                   </p>
-                  <a
-                    href={book.uri}
+                  <Link
+                    href={`/learning-hub/checkout/${book.id}`}
                     className="mt-4 inline-block bg-[#b0460d] text-white text-center rounded-md px-4 py-2 hover:bg-[#993b0c] transition"
                   >
                     Buy Now
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>

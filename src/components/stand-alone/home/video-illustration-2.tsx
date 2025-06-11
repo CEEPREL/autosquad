@@ -51,7 +51,7 @@ function VideoIllustration2() {
             className="w-full h-auto rounded-lg"
             poster="/videos/saas-pricing-poster.jpg"
           >
-            Sorry, your browser doesn't support embedded videos.
+            Sorry, your browser doesn&apos;t support embedded videos.
           </video>
         </div>
 

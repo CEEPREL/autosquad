@@ -1,0 +1,57 @@
+[
+  {
+    "category": "Programming & Software Engineering",
+    "books": [
+      {
+        "id": 1,
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "year": 2008,
+        "description": "Emphasizes writing clean, readable, and maintainable code.",
+        "price": 15.99,
+        "uri": "/checkout/cleancode.jpeg"
+      },
+      {
+        "id": 2,
+        "title": "Code Complete",
+        "author": "Steve McConnell",
+        "year": 1993,
+        "description": "A comprehensive analysis of software construction.",
+        "price": 20.0,
+        "uri": "/checkout/codecomplete.jpeg"
+      },
+      {
+        "id": 3,
+        "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+        "author": "Erich Gamma et al.",
+        "year": 1994,
+        "description": "Introduces 23 classic design patterns in object-oriented software development.",
+        "price": 25.5,
+        "uri": "/checkout/desigpatterns.jpeg"
+      }
+    ]
+  },
+  {
+    "category": "Startups & Entrepreneurship",
+    "books": [
+      {
+        "id": 11,
+        "title": "The Lean Startup",
+        "author": "Eric Ries",
+        "year": 2011,
+        "description": "Introduces the lean startup methodology, emphasizing rapid experimentation and customer feedback.",
+        "price": 18.99,
+        "uri": "/checkout/leanstartup.jpeg"
+      },
+      {
+        "id": 12,
+        "title": "Zero to One",
+        "author": "Peter Thiel",
+        "year": 2014,
+        "description": "Discusses startups and innovation.",
+        "price": 17.5,
+        "uri": "/checkout/zerotoone.jpeg"
+      }
+    ]
+  }
+]
