@@ -115,7 +115,7 @@ export default function DrawerAppBar(props: Props) {
           </Box>
 
           {/* RIGHT SECTION: Call Icon (Desktop Only) */}
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: { xs: "flex", sm: "flex" } }}>
             <Button
               onClick={() => {
                 if (typeof window !== "undefined") {
@@ -130,7 +130,7 @@ export default function DrawerAppBar(props: Props) {
                 borderRadius: "50%",
                 width: 40,
                 height: 40,
-                display: { xs: "none", sm: "flex" },
+                display: { xs: "flex", sm: "flex" },
               }}
             >
               <AddIcCall />
