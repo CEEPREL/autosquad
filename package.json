@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
+    "@paystack/inline-js": "^2.22.6",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

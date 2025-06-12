@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import CheckoutForm from "./checkout-form";
+import { Dispatch, SetStateAction } from "react";
 
 interface BookCardProps {
   title: string;
@@ -22,6 +24,41 @@ export default function BookCard({
   imageUrl,
   id,
 }: BookCardProps) {
+  // const handleSubmit = (email: string, fullName: string) => {
+  //   console.log(`Email: ${email}, Full Name: ${fullName}`);
+  // };
+  const handlePaystack = async (
+    email: string,
+    fullName: string,
+    setLoading: Dispatch<SetStateAction<boolean>>
+  ) => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/paystack", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: price * 100,
+          email: email,
+          metadata: {
+            fullName: fullName,
+            bookTitle: title,
+          },
+        }),
+      });
+      const response = await res.json();
+      if (response.status) {
+        window.location.href = response.data.authorization_url;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div
       key={id}
@@ -52,6 +89,7 @@ export default function BookCard({
             ${price.toFixed(2)}
           </span>
         </div>
+        <CheckoutForm onSubmit={handlePaystack} />
       </div>
     </div>
   );

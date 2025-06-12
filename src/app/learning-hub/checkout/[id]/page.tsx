@@ -1,6 +1,6 @@
 // app/checkout/[id]/page.tsx
 
-import BookCard from "@/components/stand-alone/checkout/book-card.";
+import BookCard from "@/components/stand-alone/checkout/book-card";
 import CheckoutForm from "@/components/stand-alone/checkout/checkout-form";
 import Checkout from "@/components/stand-alone/checkout/checkout";
 import { getBookById } from "@/utils/helper";
@@ -34,9 +34,6 @@ export default async function Page({ params }: { params: ParamsType }) {
           price={book.price}
           imageUrl={book.uri}
         />
-        <Checkout>
-          <CheckoutForm bookTitle={book.title} />
-        </Checkout>
       </div>
     );
   } catch (error: any) {
