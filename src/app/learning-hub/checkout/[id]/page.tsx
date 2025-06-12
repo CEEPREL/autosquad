@@ -1,8 +1,6 @@
 // app/checkout/[id]/page.tsx
 
 import BookCard from "@/components/stand-alone/checkout/book-card";
-import CheckoutForm from "@/components/stand-alone/checkout/checkout-form";
-import Checkout from "@/components/stand-alone/checkout/checkout";
 import { getBookById } from "@/utils/helper";
 
 // This matches your format
