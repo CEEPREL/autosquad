@@ -86,7 +86,7 @@ export default function BookCard({
 
         <div className="mt-4 flex justify-between items-center">
           <span className="text-lg font-semibold text-[#b0460d]">
-            ${price.toFixed(2)}
+            ₦{price.toFixed(2)}
           </span>
         </div>
         <CheckoutForm onSubmit={handlePaystack} />

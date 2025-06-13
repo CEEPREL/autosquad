@@ -68,7 +68,7 @@ export default function BookCategories() {
                   </p>
                   <p className="text-gray-700 flex-grow">{book.description}</p>
                   <p className="mt-4 font-bold text-lg">
-                    ${book.price.toFixed(2)}
+                    ₦{book.price.toFixed(2)}
                   </p>
                   <Link
                     href={`/learning-hub/checkout/${book.id}`}

@@ -8,7 +8,7 @@
         "author": "Robert C. Martin",
         "year": 2008,
         "description": "Emphasizes writing clean, readable, and maintainable code.",
-        "price": 15.99,
+        "price": 1500.0,
         "uri": "/checkout/cleancode.jpeg"
       },
       {
@@ -17,7 +17,7 @@
         "author": "Steve McConnell",
         "year": 1993,
         "description": "A comprehensive analysis of software construction.",
-        "price": 20.0,
+        "price": 2000.0,
         "uri": "/checkout/codecomplete.jpeg"
       },
       {
@@ -26,7 +26,7 @@
         "author": "Erich Gamma et al.",
         "year": 1994,
         "description": "Introduces 23 classic design patterns in object-oriented software development.",
-        "price": 25.5,
+        "price": 2500.0,
         "uri": "/checkout/desigpatterns.jpeg"
       }
     ]
@@ -40,7 +40,7 @@
         "author": "Eric Ries",
         "year": 2011,
         "description": "Introduces the lean startup methodology, emphasizing rapid experimentation and customer feedback.",
-        "price": 18.99,
+        "price": 1800.0,
         "uri": "/checkout/leanstartup.jpeg"
       },
       {
@@ -49,7 +49,7 @@
         "author": "Peter Thiel",
         "year": 2014,
         "description": "Discusses startups and innovation.",
-        "price": 17.5,
+        "price": 1700.0,
         "uri": "/checkout/zerotoone.jpeg"
       }
     ]

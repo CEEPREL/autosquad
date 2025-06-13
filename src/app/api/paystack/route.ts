@@ -3,19 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const data = await req.json();
-  console.log(
-    "data:",
-    data,
-    "process.env.NEXT_PUBLIC_PAYSTACK_SECRET_KEY:",
-    process.env.NEXT_PUBLIC_PAYSTACK_SECRET_KEY
-  );
   try {
     const response = await fetch(
       "https://api.paystack.co/transaction/initialize",
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_PAYSTACK_SECRET_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_PAYSTACK_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),

@@ -114,7 +114,6 @@ export default function DrawerAppBar(props: Props) {
             </Box>
           </Box>
 
-          {/* RIGHT SECTION: Call Icon (Desktop Only) */}
           <Box sx={{ display: { xs: "flex", sm: "flex" } }}>
             <Button
               onClick={() => {
