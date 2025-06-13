@@ -75,7 +75,11 @@ const projectTiers: PricingTier[] = [
     icon: "",
     title: "Enterprise",
     subtitle: "For scalable, complex systems",
-    price: "Custom Quote",
+    price: `${
+      process.env.NEXT_PUBLIC_SHOW_MY_PAYMENTS === "true"
+        ? process.env.NEXT_PUBLIC_PAYMENT_AMOUNT
+        : "Custom Quote"
+    }`,
     features: [
       "Dedicated PM & team",
       "Custom integrations",
