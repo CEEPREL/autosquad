@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 type PricingTier = {
   icon?: string;
@@ -75,11 +75,7 @@ const projectTiers: PricingTier[] = [
     icon: "",
     title: "Enterprise",
     subtitle: "For scalable, complex systems",
-    price: `${
-      process.env.NEXT_PUBLIC_SHOW_MY_PAYMENTS === "true"
-        ? process.env.NEXT_PUBLIC_PAYMENT_AMOUNT
-        : "Custom Quote"
-    }`,
+    price: `Custom Quote`,
     features: [
       "Dedicated PM & team",
       "Custom integrations",
@@ -90,6 +86,37 @@ const projectTiers: PricingTier[] = [
 ];
 
 const PricingCard = ({ tier }: { tier: PricingTier }) => {
+  const [loading, setLoading] = useState(false);
+
+  const thePrice = landingPageTiers.map((t) => t.price);
+
+  const handlePaystack = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/paystack", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: parseInt(process.env.NEXT_PUBLIC_PAYMENT_AMOUNT || "") * 100,
+          email: process.env.NEXT_PUBLIC_PAYMENT_EMAIL,
+          metadata: {
+            fullName: process.env.NEXT_PUBLIC_PAYMENT_FULLNAME,
+            bookTitle: process.env.NEXT_PUBLIC_BOOK_TITLE,
+          },
+        }),
+      });
+      const response = await res.json();
+      if (response.status) {
+        window.location.href = response.data.authorization_url;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="flex flex-col border border-gray-200 bg-white shadow hover:shadow-md rounded-lg p-6 transition-all duration-300">
       {tier.icon && (
@@ -108,6 +135,7 @@ const PricingCard = ({ tier }: { tier: PricingTier }) => {
       </ul>
       <a
         href="#contact"
+        onClick={(thePrice[5] && handlePaystack) || undefined}
         className="mt-6 bg-[#b0460d] text-white text-center rounded-md py-2 px-4 hover:bg-[#993b0c] transition"
       >
         Get Started
