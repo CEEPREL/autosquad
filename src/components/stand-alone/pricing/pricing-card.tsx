@@ -138,7 +138,7 @@ const PricingCard = ({ tier }: { tier: PricingTier }) => {
         onClick={(thePrice[5] && handlePaystack) || undefined}
         className="mt-6 bg-[#b0460d] text-white text-center rounded-md py-2 px-4 hover:bg-[#993b0c] transition"
       >
-        Get Started
+        {loading ? "Loading" : "Get Started"}
       </a>
     </div>
   );
